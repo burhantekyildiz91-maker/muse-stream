@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Hent site til iPhone — Burhan Tekyıldız</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #0c0b09;
+        color: #f3ead8;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      main {
+        width: min(28rem, 100%);
+      }
+      p.kicker {
+        margin: 0 0 12px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: #c9a66b;
+        text-align: center;
+      }
+      h1 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        font-weight: 500;
+        line-height: 0.92;
+        text-align: center;
+      }
+      h1 span {
+        display: block;
+        color: #c9a66b;
+      }
+      .hint {
+        margin: 20px 0 24px;
+        font-size: 1rem;
+        line-height: 1.55;
+        color: rgba(243, 234, 216, 0.78);
+      }
+      .hint ol {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+      .hint li {
+        margin: 0.45rem 0;
+      }
+      a.button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 64px;
+        width: 100%;
+        padding: 16px 20px;
+        border-radius: 10px;
+        background: #c9a66b;
+        color: #120e0a;
+        text-decoration: none;
+        font-size: 1.15rem;
+        font-weight: 700;
+        -webkit-tap-highlight-color: transparent;
+      }
+      a.button.secondary {
+        margin-top: 12px;
+        background: transparent;
+        color: #f3ead8;
+        border: 1px solid rgba(243, 234, 216, 0.25);
+        font-size: 1rem;
+        min-height: 52px;
+      }
+      .meta {
+        margin-top: 16px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: rgba(243, 234, 216, 0.45);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">iPhone · Simply.com</p>
+      <h1>Burhan <span>Tekyıldız</span></h1>
+      <div class="hint">
+        <ol>
+          <li>Tryk den gule knap nedenunder.</li>
+          <li>Hvis Safari åbner en grå side (“Preview not available”): tryk <strong>Del</strong> (firkant med pil) → <strong>Gem i Filer</strong>.</li>
+          <li>Eller: <strong>hold inde</strong> på knappen → <strong>Download linket fil</strong>.</li>
+          <li>Åbn Simply → File Manager → <strong>public_html</strong> → Upload zip → <strong>Unzip</strong>.</li>
+        </ol>
+      </div>
+      <a
+        class="button"
+        href="/burhan-tekyildiz-simply.zip"
+        download="burhan-tekyildiz-simply.zip"
+      >
+        Hent site-zip (4 MB)
+      </a>
+      <a class="button secondary" href="/burhan-tekyildiz-simply.zip" target="_blank" rel="noopener">
+        Åbn zip i ny fane
+      </a>
+      <p class="meta">Fil: burhan-tekyildiz-simply.zip · kun til public_html</p>
+    </main>
+  </body>
+</html>
