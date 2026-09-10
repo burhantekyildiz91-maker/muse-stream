@@ -1,0 +1,44 @@
+name: Deploy til Simply
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-simply
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: muse-stream-github-fuld
+    steps:
+      - name: Hent kode
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: muse-stream-github-fuld/package-lock.json
+
+      - name: Installer afhængigheder
+        run: npm ci
+
+      - name: Byg statisk site til Simply
+        run: npm run build
+
+      - name: Upload til Simply (FTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./muse-stream-github-fuld/out/
+          server-dir: public_html/
+          protocol: ftp
+          timeout: 600000
